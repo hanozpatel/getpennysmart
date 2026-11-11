@@ -20,6 +20,11 @@ export const BROWSER_APP = import.meta.env.VITE_BROWSER_APP === '1'
 export const REPO_URL = 'https://github.com/hanozpatel/finance-dashboard'
 export const INSTALL_URL = `${REPO_URL}#install-it-for-automatic-bank-sync`
 
+// A page, on another site, where someone can leave an email address to hear
+// about new releases. The app only links to it and sends nothing itself, so
+// "nothing is sent anywhere" stays true. Empty hides the link everywhere.
+export const UPDATES_URL: string = ''
+
 // Pinned: a Pyodide upgrade changes the Python version and every package, and
 // should be a deliberate, tested change rather than whatever the CDN serves.
 const PYODIDE_VERSION = '0.29.5'

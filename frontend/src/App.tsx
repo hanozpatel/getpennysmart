@@ -17,7 +17,7 @@ import { NavLink, Navigate, Route, Routes } from 'react-router-dom'
 import { Badge, Button, money, Segmented } from './components/ui'
 import { useAsync } from './hooks/useAsync'
 import { api, errorMessage } from './lib/api'
-import { BROWSER_APP, INSTALL_URL, REPO_URL } from './lib/runtime'
+import { BROWSER_APP, INSTALL_URL, REPO_URL, UPDATES_URL } from './lib/runtime'
 import { useTheme } from './lib/theme'
 import Accounts from './pages/Accounts'
 import Budget from './pages/Budget'
@@ -212,6 +212,11 @@ export default function App() {
           {!BROWSER_APP && health.data && !health.data.master_key_from_environment && (
             <Badge tone="warning">FINANCE_MASTER_KEY not set</Badge>
           )}
+          {UPDATES_URL && (
+            <a href={UPDATES_URL} target="_blank" rel="noreferrer" className="underline sm:ml-auto">
+              Get an email when new features ship
+            </a>
+          )}
         </div>
       </footer>
     </div>
@@ -242,6 +247,9 @@ function BrowserBar() {
         Install it for automatic bank sync
       </a>
       <a href={REPO_URL} target="_blank" rel="noreferrer" className="underline">Source</a>
+      {UPDATES_URL && (
+        <a href={UPDATES_URL} target="_blank" rel="noreferrer" className="underline">Get updates</a>
+      )}
       <button
         onClick={() => {
           setHidden(true)
