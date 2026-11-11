@@ -51,8 +51,10 @@ def test_accounts_list_and_net_worth_agree(client):
 
 def test_overview_is_internally_consistent(client):
     body = client.get("/api/analytics/overview").json()
-    assert body["net_worth"]["net_worth"] == (
-        body["net_worth"]["assets"] - body["net_worth"]["liabilities"]
+    # Money is compared to the cent, never with ==: the three figures are each
+    # rounded floats, and assets - liabilities can land on 160550.12000000002.
+    assert body["net_worth"]["net_worth"] == pytest.approx(
+        body["net_worth"]["assets"] - body["net_worth"]["liabilities"], abs=0.01
     )
     assert len(body["cash_flow"]) >= 12
     for month in body["cash_flow"]:
@@ -150,14 +152,14 @@ def test_house_plan_is_complete_and_consistent(client):
     body = client.get("/api/goals/house").json()
     payment, goal = body["payment"], body["goal"]
 
-    assert payment["loan_amount"] == round(
-        goal["target_price"] * (1 - goal["down_payment_pct"] / 100), 2)
+    assert payment["loan_amount"] == pytest.approx(
+        goal["target_price"] * (1 - goal["down_payment_pct"] / 100), abs=0.01)
     parts = (payment["principal_interest"] + payment["property_tax"]
              + payment["insurance"] + payment["hoa"] + payment["pmi"])
     assert abs(parts - payment["total_monthly"]) < 0.02
 
-    assert body["cash_needed"]["total"] == round(
-        body["cash_needed"]["down_payment"] + body["cash_needed"]["closing_costs"], 2)
+    assert body["cash_needed"]["total"] == pytest.approx(
+        body["cash_needed"]["down_payment"] + body["cash_needed"]["closing_costs"], abs=0.01)
     assert body["dti"]["back_end"] >= body["dti"]["front_end"]
     assert len(body["scenarios"]) == 6
     assert len(body["readiness"]["checks"]) == 4
