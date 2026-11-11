@@ -27,6 +27,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Tells the build where the site is served from: "/<repo>" on
+      # <user>.github.io, or "" when the site has its own domain. Asking Pages
+      # keeps the two in step, so changing the address needs no edit here.
+      - id: pages
+        uses: actions/configure-pages@v5
+
       - name: Package the backend for the browser
         run: python3 backend/scripts/build_browser_bundle.py
 
@@ -42,7 +48,7 @@ jobs:
         working-directory: frontend
         env:
           VITE_BROWSER_APP: "1"
-          VITE_BASE: /${{ github.event.repository.name }}/
+          VITE_BASE: ${{ steps.pages.outputs.base_path }}/
       # Pages serves 404.html for unknown paths, which is what makes a deep
       # link like /budget load the app instead of a GitHub error page.
       - run: cp frontend/dist/index.html frontend/dist/404.html
