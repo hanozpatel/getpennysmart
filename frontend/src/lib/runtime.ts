@@ -17,7 +17,7 @@ import { AxiosError, AxiosHeaders, type AxiosResponse, type InternalAxiosRequest
 
 export const BROWSER_APP = import.meta.env.VITE_BROWSER_APP === '1'
 
-export const REPO_URL = 'https://github.com/hanozpatel/finance-dashboard'
+export const REPO_URL = 'https://github.com/hanozpatel/getpennysmart'
 export const INSTALL_URL = `${REPO_URL}#install-it-for-automatic-bank-sync`
 
 // A page, on another site, where someone can leave an email address to hear

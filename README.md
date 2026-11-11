@@ -7,15 +7,15 @@ ranks concrete ways to spend less, and plans a home purchase against the result.
 
 No cloud, no account, no telemetry. One SQLite file, next to the code.
 
-[![Open the app](https://img.shields.io/badge/open_the_app-in_your_browser-2a78d6)](https://hanozpatel.github.io/finance-dashboard/)
-[![Tests](https://github.com/hanozpatel/finance-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/hanozpatel/finance-dashboard/actions/workflows/ci.yml)
+[![Open the app](https://img.shields.io/badge/open_the_app-in_your_browser-2a78d6)](https://getpennysmart.com/)
+[![Tests](https://github.com/hanozpatel/getpennysmart/actions/workflows/ci.yml/badge.svg)](https://github.com/hanozpatel/getpennysmart/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 
 ![Budgets compared with state averages](docs/demo-budget.gif)
 
 ## Try it
 
-**[Open the app →](https://hanozpatel.github.io/finance-dashboard/)** — it runs entirely in your browser. No account, no
+**[Open the app →](https://getpennysmart.com/)** — it runs entirely in your browser. No account, no
 sign-up, no install, and nothing you enter is sent anywhere: the whole app,
 Python backend included, runs on your device and stores its data there.
 
@@ -41,8 +41,8 @@ Banks and brokerages only hand transactions to a server holding secret API keys
 the app running on your own computer:
 
 ```bash
-git clone https://github.com/hanozpatel/finance-dashboard.git
-cd finance-dashboard
+git clone https://github.com/hanozpatel/getpennysmart.git
+cd getpennysmart
 make install      # Python venv + npm packages
 make env          # backend/.env with a freshly generated encryption key
 make dev          # API on :8001, app on http://localhost:5174

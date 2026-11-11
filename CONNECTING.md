@@ -1,7 +1,7 @@
 # Connecting your real accounts
 
 > **These steps are for the version installed on your computer.** The
-> [web app](https://hanozpatel.github.io/finance-dashboard/) runs entirely in your
+> [web app](https://getpennysmart.com/) runs entirely in your
 > browser and has no server to hold the secret keys banks require, so there you
 > import your bank's CSV export instead (Accounts tab → Import a CSV) — see
 > [section 4](#4-apple-card-and-apple-savings--csv-and-by-hand) for how CSV import
@@ -47,7 +47,7 @@ localhost.
 
 ### Configure
 
-Edit `finance-dashboard/backend/.env`:
+Edit `getpennysmart/backend/.env`:
 
 ```bash
 PLAID_CLIENT_ID=your_client_id
@@ -103,7 +103,7 @@ business registration, and connects read-only — trading is never requested.
 
 1. Sign up at **https://snaptrade.com** and choose the Personal tier.
 2. From the dashboard, copy the **client ID** and **consumer key**.
-3. Put them in `finance-dashboard/backend/.env`:
+3. Put them in `getpennysmart/backend/.env`:
 
    ```bash
    SNAPTRADE_CLIENT_ID=your_client_id
