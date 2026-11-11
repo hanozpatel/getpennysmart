@@ -23,7 +23,7 @@ export const INSTALL_URL = `${REPO_URL}#install-it-for-automatic-bank-sync`
 // A page, on another site, where someone can leave an email address to hear
 // about new releases. The app only links to it and sends nothing itself, so
 // "nothing is sent anywhere" stays true. Empty hides the link everywhere.
-export const UPDATES_URL: string = ''
+export const UPDATES_URL: string = 'https://buttondown.com/getpennysmart'
 
 // Pinned: a Pyodide upgrade changes the Python version and every package, and
 // should be a deliberate, tested change rather than whatever the CDN serves.
@@ -208,7 +208,7 @@ export async function restoreBackup(file: File): Promise<void> {
   const bytes = new Uint8Array(await file.arrayBuffer())
   // SQLite files start with this exact 16-byte header; anything else is not a backup.
   const magic = new TextDecoder().decode(bytes.slice(0, 15))
-  if (magic !== 'SQLite format 3') throw new Error('That file is not a Finance Dashboard backup.')
+  if (magic !== 'SQLite format 3') throw new Error('That file is not a Get Penny Smart backup.')
   await boot()
   await queue
   pyodide!.FS.writeFile(DB_FILE, bytes)

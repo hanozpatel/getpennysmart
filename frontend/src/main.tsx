@@ -26,7 +26,7 @@ function BootGate({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen items-center justify-center px-4" style={{ background: 'var(--surface-page)' }}>
       <div className="w-full max-w-sm">
-        <h1 className="text-lg font-semibold text-[var(--text-primary)]">Finance Dashboard</h1>
+        <h1 className="text-lg font-semibold text-[var(--text-primary)]">Get Penny Smart</h1>
         <p className="mt-1 text-sm text-[var(--text-secondary)]">
           Starting up in your browser. Everything runs on this device — your data is never sent anywhere.
         </p>

@@ -1,4 +1,4 @@
-"""Finance Dashboard API.
+"""Get Penny Smart API.
 
 Single-user and local by design. It binds to localhost, has no authentication,
 and keeps everything in one SQLite file — which is the right trade for an app
@@ -64,7 +64,7 @@ async def lifespan(_app: FastAPI):
     yield
 
 
-app = FastAPI(title="Finance Dashboard API", version="1.0.0", lifespan=lifespan)
+app = FastAPI(title="Get Penny Smart API", version="1.0.0", lifespan=lifespan)
 
 # Only the local dev server and a locally-served build. There is no deployment
 # story here on purpose: this data should not leave the machine.

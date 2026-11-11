@@ -1,4 +1,4 @@
-# Finance Dashboard
+# Get Penny Smart
 
 **A private personal finance dashboard that runs on your own machine.** It pulls
 real transactions from your banks, cards and brokerage, shows where the money
@@ -23,6 +23,8 @@ It opens with 18 months of **made-up demo data** (a fictional person in San
 Francisco) so every tab has something to show. Clear it with one click, then
 bring in your own by importing the CSV export every bank offers, or by adding
 accounts by hand. Back up, restore, or delete your data from the Accounts tab.
+
+Want to hear about new features? [Get an email when they ship →](https://buttondown.com/getpennysmart)
 
 | | Web app | Installed on your computer |
 |---|---|---|

@@ -83,7 +83,7 @@ export default function App() {
       >
         <div className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-x-5 gap-y-2 px-4 py-2.5">
           <div className="flex items-baseline gap-2.5">
-            <span className="text-sm font-semibold tracking-tight">Finance</span>
+            <span className="text-sm font-semibold tracking-tight">Get Penny Smart</span>
             {worth.data && (
               <span className="text-sm text-[var(--text-secondary)]">
                 net worth{' '}

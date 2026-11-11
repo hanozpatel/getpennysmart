@@ -179,7 +179,7 @@ def create_link_token(kind: str = "bank", user_id: str = "finance-dashboard-loca
     try:
         kwargs = dict(
             user=LinkTokenCreateRequestUser(client_user_id=user_id),
-            client_name="Finance Dashboard",
+            client_name="Get Penny Smart",
             products=[Products(p) for p in spec["products"]],
             country_codes=[CountryCode("US")],
             language="en",
